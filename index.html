@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Calculadora de Super Fatorial</title>
+</head>
+<body>
+    <h1>Calculadora de Super Fatorial</h1>
+    <form id="fatorial-form">
+        <label for="numero">Digite um numero:</label>
+        <input type="number" id="numero" name="numero">
+        <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado"></div>
+
+    <script>
+        const form = document.getElementById('fatorial-form');
+        const resultadoDiv = document.getElementById('resultado');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const numero = document.getElementById('numero').value;
+
+            try {
+                const response = await fetch(`/super_fatorial/${numero}`);
+                const data = await response.json();
+
+                resultadoDiv.innerHTML = `O super fatorial de ${data.numero} é ${data.super_fatorial}.`;
+            } catch (error) {
+                resultadoDiv.innerHTML = 'Ocorreu um erro ao calcular o super fatorial.';
+            }
+        });
+    </script>
+</body>
+</html>
