@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Calculadora de Super Fatorial</title>
+    <style>
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+             word-wrap: break-word;
+        }
+          #resultado p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <h1>Calculadora de Super Fatorial</h1>
     <form id="fatorial-form">
         <label for="numero">Digite um numero:</label>
-        <input type="number" id="numero" name="numero">
+        <input type="text" id="numero" name="numero" min="0">
         <button type="submit">Calcular</button>
     </form>
-    <div id="resultado"></div>
+    <div id="resultado" class="saida"></div>
 
     <script>
         const form = document.getElementById('fatorial-form');
@@ -25,9 +40,9 @@
                 const response = await fetch(`/super_fatorial/${numero}`);
                 const data = await response.json();
 
-                resultadoDiv.innerHTML = `O super fatorial de ${data.numero} é ${data.super_fatorial}.`;
+                resultadoDiv.innerHTML = `<p>O super fatorial de ${data.numero} eh: ${data.super_fatorial}.<p>`;
             } catch (error) {
-                resultadoDiv.innerHTML = 'Ocorreu um erro ao calcular o super fatorial.';
+                resultadoDiv.innerHTML = '<p>Ocorreu um erro ao calcular o super fatorial.<p>';
             }
         });
     </script>
