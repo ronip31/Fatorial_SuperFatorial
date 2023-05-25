@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 import redis
 from decimal import Decimal, getcontext
+import waitress
+from waitress import serve
 
 app = Flask(__name__)
 cache = redis.Redis()
@@ -48,5 +50,6 @@ def obter_super_fatorial(numero):
     resultado = calcular_super_fatorial(numero)
     return jsonify({'numero': numero, 'super_fatorial': str(resultado)})
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    serve(app, host='0.0.0.0', port=5000)
     app.run(debug=True)

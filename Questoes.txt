@@ -1,0 +1,9 @@
+Questao:
+
+- Quais beneficios podem ser obtidos com NGINX? Pesquise...
+
+
+- O que acontece se tentar subir dois servidores diferentes na mesma porta da mesma máquina?
+
+
+- Qunando pode ocorrer um erro de Cross-Domain (CORS - Cross-Origin Resource Sharing) e como você pode resolver isso?
