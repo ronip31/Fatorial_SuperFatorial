@@ -7,3 +7,8 @@ Questao:
 
 
 - Qunando pode ocorrer um erro de Cross-Domain (CORS - Cross-Origin Resource Sharing) e como você pode resolver isso?
+
+
+Parte III Documentar:
+
+Pesquisar a melhor forma de documentar sua API e produzir uma documentacao para ela
